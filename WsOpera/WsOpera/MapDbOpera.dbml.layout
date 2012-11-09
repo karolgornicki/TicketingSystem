@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MapDbOpera">
+  <DataContextMoniker Name="/MapDbOperaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5a118cff-a303-41aa-a857-9d12188346d9" absoluteBounds="2, 1.125, 2, 1.2605004882812498">
+      <DataClassMoniker Name="/MapDbOperaDataContext/Entertainment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3846f1a4-2487-42d0-8d43-2c1df08d780e" absoluteBounds="2.015, 1.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30e9d87c-36c2-4290-8f34-864a4265923f" absoluteBounds="4.875, 1.125, 2, 1.7535424804687498">
+      <DataClassMoniker Name="/MapDbOperaDataContext/Seat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5bcf72a-b7fd-4db4-a617-d367b8ab897e" absoluteBounds="4.89, 1.585, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="998c599d-4ab4-4c66-af98-19023a565851" absoluteBounds="2, 3.375, 2, 2.2465844726562496">
+      <DataClassMoniker Name="/MapDbOperaDataContext/Show" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b3b40e6-7eab-456a-a830-1240f47e52bb" absoluteBounds="2.015, 3.835, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 1.75525024414062); (4.875 : 1.75525024414062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbOperaDataContext/Entertainment/Entertainment_Seat" />
+      <nodes>
+        <classShapeMoniker Id="5a118cff-a303-41aa-a857-9d12188346d9" />
+        <classShapeMoniker Id="30e9d87c-36c2-4290-8f34-864a4265923f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 3.375); (3 : 2.38550048828125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbOperaDataContext/Show/Show_Entertainment" />
+      <nodes>
+        <classShapeMoniker Id="998c599d-4ab4-4c66-af98-19023a565851" />
+        <classShapeMoniker Id="5a118cff-a303-41aa-a857-9d12188346d9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

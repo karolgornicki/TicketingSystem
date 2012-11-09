@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MapDbSmallTheatre">
+  <DataContextMoniker Name="/MapDbSmallTheatreDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a168ef57-9d41-46ee-8fdd-86ddf779d405" absoluteBounds="4, 1.25, 2, 1.26050048828125">
+      <DataClassMoniker Name="/MapDbSmallTheatreDataContext/Entertainment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c2c2fd5-f99f-47b3-ab5c-28b9e7fc7e48" absoluteBounds="4.0150000000000006, 1.71, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="494059c0-74b4-4f76-9151-fceba1b749d2" absoluteBounds="6.375, 1.125, 2, 1.75354248046875">
+      <DataClassMoniker Name="/MapDbSmallTheatreDataContext/Seat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5aaad1dc-6095-4e52-ac1c-c5457429d5fe" absoluteBounds="6.39, 1.585, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69d20794-ca44-4c5f-becf-195215722042" absoluteBounds="1.5, 1.125, 2, 1.75354248046875">
+      <DataClassMoniker Name="/MapDbSmallTheatreDataContext/Show" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53425385-a565-49cb-bbbf-71512b3a2f59" absoluteBounds="1.5150000000000001, 1.585, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 1.88025024414063); (6.375 : 1.88025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbSmallTheatreDataContext/Entertainment/Entertainment_Seat" />
+      <nodes>
+        <classShapeMoniker Id="a168ef57-9d41-46ee-8fdd-86ddf779d405" />
+        <classShapeMoniker Id="494059c0-74b4-4f76-9151-fceba1b749d2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 1.88025024414063); (4 : 1.88025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbSmallTheatreDataContext/Show/Show_Entertainment" />
+      <nodes>
+        <classShapeMoniker Id="69d20794-ca44-4c5f-becf-195215722042" />
+        <classShapeMoniker Id="a168ef57-9d41-46ee-8fdd-86ddf779d405" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

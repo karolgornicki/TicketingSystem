@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MapDbBallet">
+  <DataContextMoniker Name="/MapDbBalletDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2689495e-bfa8-4354-b5d0-85eb80f70c84" absoluteBounds="2, 1, 2, 1.2605004882812498">
+      <DataClassMoniker Name="/MapDbBalletDataContext/Entertainment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eaf0519-486b-44a2-8a9f-b4c58dc31021" absoluteBounds="2.015, 1.46, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb1754e3-5536-4eaa-871f-08b3935c451f" absoluteBounds="4.75, 1, 2, 1.7535424804687498">
+      <DataClassMoniker Name="/MapDbBalletDataContext/Seat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff683fe0-07ae-4173-ae7a-1839498aca8a" absoluteBounds="4.765, 1.46, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4b1af9b-a3c3-42a0-bc6f-4751088ba59c" absoluteBounds="2, 3, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/MapDbBalletDataContext/Show" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5561f0fb-09f6-4da2-b2b9-2b50dde72fa2" absoluteBounds="2.015, 3.46, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 1.63025024414062); (4.75 : 1.63025024414062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbBalletDataContext/Entertainment/Entertainment_Seat" />
+      <nodes>
+        <classShapeMoniker Id="2689495e-bfa8-4354-b5d0-85eb80f70c84" />
+        <classShapeMoniker Id="bb1754e3-5536-4eaa-871f-08b3935c451f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 3); (3 : 2.26050048828125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbBalletDataContext/Show/Show_Entertainment" />
+      <nodes>
+        <classShapeMoniker Id="e4b1af9b-a3c3-42a0-bc6f-4751088ba59c" />
+        <classShapeMoniker Id="2689495e-bfa8-4354-b5d0-85eb80f70c84" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetSeats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="showTitle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSeatsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BookSeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="showTitle" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="row" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookSeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookSeatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShowDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showTitle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShowDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShowDetailsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleForDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleForDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleForDateResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get3EarliestEntertainment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sinceDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get3EarliestEntertainmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get3EarliestEntertainmentResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleForAMonth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleForAMonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleForAMonthResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="showTitle" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="row" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSeatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSeats" />
+  </wsdl:message>
+  <wsdl:message name="GetSeatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookSeatSoapIn">
+    <wsdl:part name="parameters" element="tns:BookSeat" />
+  </wsdl:message>
+  <wsdl:message name="BookSeatSoapOut">
+    <wsdl:part name="parameters" element="tns:BookSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShowDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShowDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetShowDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShowDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleForDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleForDate" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleForDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleForDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get3EarliestEntertainmentSoapIn">
+    <wsdl:part name="parameters" element="tns:Get3EarliestEntertainment" />
+  </wsdl:message>
+  <wsdl:message name="Get3EarliestEntertainmentSoapOut">
+    <wsdl:part name="parameters" element="tns:Get3EarliestEntertainmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleForAMonthSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleForAMonth" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleForAMonthSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleForAMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelReservation" />
+  </wsdl:message>
+  <wsdl:message name="CancelReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelReservationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="GetSeats">
+      <wsdl:input message="tns:GetSeatsSoapIn" />
+      <wsdl:output message="tns:GetSeatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookSeat">
+      <wsdl:input message="tns:BookSeatSoapIn" />
+      <wsdl:output message="tns:BookSeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShowDetails">
+      <wsdl:input message="tns:GetShowDetailsSoapIn" />
+      <wsdl:output message="tns:GetShowDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleForDate">
+      <wsdl:input message="tns:GetScheduleForDateSoapIn" />
+      <wsdl:output message="tns:GetScheduleForDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get3EarliestEntertainment">
+      <wsdl:input message="tns:Get3EarliestEntertainmentSoapIn" />
+      <wsdl:output message="tns:Get3EarliestEntertainmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleForAMonth">
+      <wsdl:input message="tns:GetScheduleForAMonthSoapIn" />
+      <wsdl:output message="tns:GetScheduleForAMonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <wsdl:input message="tns:CancelReservationSoapIn" />
+      <wsdl:output message="tns:CancelReservationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSeats">
+      <soap:operation soapAction="http://tempuri.org/GetSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookSeat">
+      <soap:operation soapAction="http://tempuri.org/BookSeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowDetails">
+      <soap:operation soapAction="http://tempuri.org/GetShowDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleForDate">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleForDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get3EarliestEntertainment">
+      <soap:operation soapAction="http://tempuri.org/Get3EarliestEntertainment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleForAMonth">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleForAMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <soap:operation soapAction="http://tempuri.org/CancelReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSeats">
+      <soap12:operation soapAction="http://tempuri.org/GetSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookSeat">
+      <soap12:operation soapAction="http://tempuri.org/BookSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetShowDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleForDate">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleForDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get3EarliestEntertainment">
+      <soap12:operation soapAction="http://tempuri.org/Get3EarliestEntertainment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleForAMonth">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleForAMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <soap12:operation soapAction="http://tempuri.org/CancelReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost:4226/WsSmallTheatre.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost:4226/WsSmallTheatre.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

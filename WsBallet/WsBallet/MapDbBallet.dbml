@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DbBallet" Class="MapDbBalletDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DbBallet.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DbBalletConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Entertainments" Member="Entertainments">
+    <Type Name="Entertainment">
+      <Column Name="EntertainmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShowID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Entertainment_Seat" Member="Seats" ThisKey="EntertainmentID" OtherKey="EntertainmentID" Type="Seat" />
+      <Association Name="Show_Entertainment" Member="Show" ThisKey="ShowID" OtherKey="ShowID" Type="Show" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seats" Member="Seats">
+    <Type Name="Seat">
+      <Column Name="SeatID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntertainmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Row" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Entertainment_Seat" Member="Entertainment" ThisKey="EntertainmentID" OtherKey="EntertainmentID" Type="Entertainment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shows" Member="Shows">
+    <Type Name="Show">
+      <Column Name="ShowID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Conductor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChoreographyBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cast" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MusicBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Runtime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Show_Entertainment" Member="Entertainments" ThisKey="ShowID" OtherKey="ShowID" Type="Entertainment" />
+    </Type>
+  </Table>
+</Database>

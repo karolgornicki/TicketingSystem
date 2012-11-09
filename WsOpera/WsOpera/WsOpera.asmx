@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="WsOpera.asmx.cs" Class="WsOpera.Service1" %>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MapDbOrders">
+  <DataContextMoniker Name="/MapDbOrdersDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6913c989-7836-4382-ab1b-0774f6a161d2" absoluteBounds="3.5, 0.875, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/MapDbOrdersDataContext/InvoiceLine" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4065499b-0d23-45f5-9389-1f9edf9f59a2" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7206f7f5-a132-4eac-81be-121686d2a86c" absoluteBounds="0.75, 1.125, 2, 1.5891951497395829">
+      <DataClassMoniker Name="/MapDbOrdersDataContext/Invoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53a94be8-1fab-4032-bf52-2ec86ea2cf0e" absoluteBounds="0.765, 1.585, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.91959757486979); (3.5 : 1.91959757486979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MapDbOrdersDataContext/Invoice/Invoice_InvoiceLine" />
+      <nodes>
+        <classShapeMoniker Id="7206f7f5-a132-4eac-81be-121686d2a86c" />
+        <classShapeMoniker Id="6913c989-7836-4382-ab1b-0774f6a161d2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TicketingSystem.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Ticketing System</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+    <table id="layout" align="center" cellpadding="0" cellspacing="0" style="width: 960px">
+        <tr class="header">
+            <td colspan="2">
+                <img style="display: block;" src="Images/header2.png" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 200px" valign="top">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Vertical" 
+                    BorderWidth="160px">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home"/>
+
+                        <asp:MenuItem Text="Entertainment" Value="Entertainment">
+                            <asp:MenuItem Text="For this month" Value="For this month" 
+                                NavigateUrl="~/EntForThisMonth.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Repertoires" Value="Full reperoire">
+                                <asp:MenuItem Text="Ballet" Value="Ballet" NavigateUrl="~/EntBallet.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Opera" Value="Opera" NavigateUrl="~/EntOpera.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Theater" Value="Theater" NavigateUrl="~/EntTheater.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                        <asp:MenuItem Text="Cancel reservation" Value="New Item" 
+                            NavigateUrl="~/CancelReservation.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Shopping cart" Value="Shopping cart" 
+                            NavigateUrl="~/ShoppingCart.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Print tickets" Value="Shopping cart" 
+                            NavigateUrl="~/PrintTicket.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" 
+                    BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" 
+                    Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" 
+                    Width="184px" onselectionchanged="Calendar1_SelectionChanged"
+                    OnDayRender="DisablePastDays">
+                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                    <NextPrevStyle VerticalAlign="Bottom" />
+                    <OtherMonthDayStyle ForeColor="#808080" />
+                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                    <SelectorStyle BackColor="#CCCCCC" />
+                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <WeekendDayStyle BackColor="#FFFFCC" />
+                </asp:Calendar>
+            </td>
+            <td style="width: 760px" valign="top">
+                <div id="main">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div class="footer">
+        <p>Made by Karol Gornicki, Coventry University 2011</p>
+    </div>
+    </form>
+</body>
+</html>
